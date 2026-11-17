@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun ke-26, Indria Natasha!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter, Pacifico & Amiri -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Pacifico&family=Amiri:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .font-amiri {
+            font-family: 'Amiri', serif;
+        }
+        .glow-text {
+            text-shadow: 0 0 12px rgba(236, 72, 153, 0.8), 0 0 24px rgba(236, 72, 153, 0.5), 0 0 36px rgba(236, 72, 153, 0.3);
+        }
+        .glow-gold {
+            text-shadow: 0 0 12px rgba(251, 191, 36, 0.9), 0 0 24px rgba(251, 191, 36, 0.6);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), inset 0 0 15px rgba(236, 72, 153, 0.3); }
+            50% { box-shadow: 0 0 35px rgba(251, 191, 36, 0.8), inset 0 0 25px rgba(251, 191, 36, 0.5); }
+        }
+        .photo-frame {
+            animation: pulseGlow 3s infinite;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen relative flex flex-col justify-between selection:bg-pink-500 selection:text-white">
+
+    <!-- Background Image with Blurry Overlay -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <img src="https://i.ibb.co.com/FL4BFtfM/IMG-20261117-142639.jpg" alt="Background" class="w-full h-full object-cover filter blur-lg scale-110 opacity-25">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-900/60"></div>
+    </div>
+
+    <!-- Floating Balloons Container -->
+    <div id="balloons-container" class="absolute inset-0 pointer-events-none z-10 overflow-hidden"></div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-20 flex-grow flex flex-col items-center justify-center px-4 py-8 md:py-12 max-w-4xl mx-auto w-full text-center">
+
+        <!-- Top Greeting Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-pink-300 text-sm md:text-base mb-6 floating shadow-lg border border-pink-500/30">
+            <i class="fa-solid fa-sparkles text-yellow-400"></i>
+            <span>Milad Mubarak & Barakallahu Fi Umrik</span>
+            <i class="fa-solid fa-cake-candles text-pink-400"></i>
+        </div>
+
+        <!-- Main Title / Name -->
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-pacifico text-pink-400 glow-text mb-2 tracking-wide">
+            Indria Natasha
+        </h1>
+        <p class="text-xl md:text-3xl font-semibold text-yellow-300 glow-gold mb-8 tracking-wider font-amiri">
+            ✨ Selamat Ulang Tahun ke-26 ✨
+        </p>
+
+        <!-- Centered Photo Frame with Glow -->
+        <div class="relative my-4 group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-pink-600 via-purple-600 to-yellow-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl photo-frame mx-auto bg-slate-900">
+                <img src="https://i.ibb.co.com/FL4BFtfM/IMG-20261117-142639.jpg" alt="Indria Natasha" class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105" onerror="this.src='https://placehold.co/400x400/1e293b/f472b6?text=Indria+Natasha';">
+            </div>
+            <!-- Decorative Badge on photo -->
+            <div class="absolute -bottom-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold px-6 py-1.5 rounded-full shadow-lg border border-white/20 text-sm md:text-base whitespace-nowrap">
+                🎂 26 Tahun Penuh Berkah
+            </div>
+        </div>
+
+        <!-- Birthday Wish Card -->
+        <div class="glass-panel rounded-2xl p-6 md:p-8 mt-8 shadow-2xl max-w-2xl mx-auto border border-pink-500/20 text-slate-100 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 px-4 py-1 rounded-full text-xs text-pink-400 font-semibold border border-pink-500/30">
+                Doa & Harapan Indah
+            </div>
+            <p class="text-base md:text-lg leading-relaxed mb-4 text-slate-200">
+                "Barakallahu fii umrik, Indria Natasha tersayang! Di usia yang ke-26 tahun ini, semoga Allah SWT senantiasa melimpahkan rahmat, keberkahan, kesehatan, kelancaran dalam setiap urusan, serta kebahagiaan dunia dan akhirat. Semoga selalu menjadi pribadi yang menginspirasi dan membawa kebaikan bagi sesama."
+            </p>
+            <div class="text-sm md:text-base font-amiri text-yellow-300 italic">
+                "Mabruk alfa mabruk, 'alaika mabruk... Mabruk alfa mabruk, yawmil milad mabruk..." 🎶
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <button id="confetti-btn" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-bold rounded-full shadow-lg shadow-pink-500/30 transform hover:-translate-y-0.5 transition active:translate-y-0 flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Semarakkan Pesta!
+            </button>
+            <button id="wish-btn" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-slate-950 font-bold rounded-full shadow-lg shadow-yellow-500/30 transform hover:-translate-y-0.5 transition active:translate-y-0 flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-gift"></i> Tulis Ucapan Manis
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Music Player & Footer Controls -->
+    <div class="relative z-30 w-full bg-slate-900/90 backdrop-blur-md border-t border-white/10 py-4 px-4">
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Song Info -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400" id="vinyl-icon">
+                    <i class="fa-solid fa-compact-disc"></i>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-sm font-bold text-white">Mabruk Alfa Mabruk</h4>
+                    <p class="text-xs text-slate-400">Backsound Spesial Milad</p>
+                </div>
+            </div>
+
+            <!-- Audio Controls -->
+            <div class="flex items-center gap-4">
+                <button id="play-pause-btn" class="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white flex items-center justify-center shadow-lg hover:scale-105 transition cursor-pointer">
+                    <i class="fa-solid fa-play text-lg" id="play-icon"></i>
+                </button>
+                <div class="text-xs text-slate-400">
+                    Putar Backsound Musik
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Audio Element with Mabruk Alfa Mabruk Islamic Birthday Nasheed Source -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=happy-birthday-jazz-version-111305.mp3" type="audio/mpeg">
+        Browsermu tidak mendukung pemutar audio.
+    </audio>
+
+    <!-- Modal Wish Input -->
+    <div id="wish-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-md rounded-2xl p-6 border border-white/20 relative shadow-2xl">
+            <button id="close-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-xl font-bold text-pink-400 mb-2 font-pacifico">Doa untuk Indria Natasha</h3>
+            <p class="text-xs text-slate-300 mb-4">Tuliskan pesan hangat dan doa terbaikmu di hari ulang tahunnya yang ke-26.</p>
+            <textarea id="user-wish-input" rows="4" class="w-full bg-slate-900/80 border border-white/20 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-pink-500 mb-4 resize-none" placeholder="Tulis doa dan harapan di sini..."></textarea>
+            <button id="submit-wish" class="w-full py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition cursor-pointer">
+                Kirim Ucapan 💌
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-slate-900 border border-pink-500/40 text-white px-6 py-3 rounded-full shadow-2xl hidden text-sm flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-green-400"></i>
+        <span id="toast-msg">Ucapan berhasil dikirim!</span>
+    </div>
+
+    <!-- JavaScript Animations & Logic -->
+    <script>
+        // Automatic Confetti on load
+        window.addEventListener('DOMContentLoaded', () => {
+            triggerConfetti();
+            createBalloons();
+        });
+
+        function triggerConfetti() {
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ec4899', '#fbbf24', '#a855f7', '#38bdf8']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ec4899', '#fbbf24', '#a855f7', '#38bdf8']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Floating Balloons Generator
+        function createBalloons() {
+            const container = document.getElementById('balloons-container');
+            const colors = ['bg-pink-500', 'bg-purple-500', 'bg-yellow-400', 'bg-sky-400', 'bg-rose-400'];
+            const count = 15;
+
+            for (let i = 0; i < count; i++) {
+                const balloon = document.createElement('div');
+                const colorClass = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.floor(Math.random() * 20) + 30; // 30px to 50px
+                const leftPos = Math.random() * 100;
+                const animDuration = Math.random() * 6 + 6; // 6s to 12s
+                const delay = Math.random() * 5;
+
+                balloon.className = `absolute rounded-full ${colorClass} opacity-40 shadow-lg`;
+                balloon.style.width = `${size}px`;
+                balloon.style.height = `${size * 1.2}px`;
+                balloon.style.left = `${leftPos}%`;
+                balloon.style.bottom = `-100px`;
+                balloon.style.animation = `floatUp ${animDuration}s ease-in-out ${delay}s infinite`;
+                
+                container.appendChild(balloon);
+            }
+        }
+
+        // Add dynamic CSS keyframe for balloon floating up
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerHTML = `
+            @keyframes floatUp {
+                0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+                20% { opacity: 0.6; }
+                80% { opacity: 0.6; }
+                100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+        // Confetti Button Handler
+        document.getElementById('confetti-btn').addEventListener('click', () => {
+            triggerConfetti();
+        });
+
+        // Audio Player Controls
+        const audio = document.getElementById('bg-audio');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const vinylIcon = document.getElementById('vinyl-icon');
+        let isPlaying = false;
+
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playIcon.className = "fa-solid fa-play text-lg";
+                vinylIcon.classList.remove('animate-spin');
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    playIcon.className = "fa-solid fa-pause text-lg";
+                    vinylIcon.classList.add('animate-spin');
+                    isPlaying = true;
+                }).catch(e => {
+                    showToast("Gagal memutar audio otomatis.");
+                });
+            }
+        });
+
+        // Modal Wish Handlers
+        const wishModal = document.getElementById('wish-modal');
+        const wishBtn = document.getElementById('wish-btn');
+        const closeModal = document.getElementById('close-modal');
+        const submitWish = document.getElementById('submit-wish');
+        const userWishInput = document.getElementById('user-wish-input');
+
+        wishBtn.addEventListener('click', () => {
+            wishModal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            wishModal.classList.add('hidden');
+        });
+
+        submitWish.addEventListener('click', () => {
+            const text = userWishInput.value.trim();
+            if (text) {
+                wishModal.classList.add('hidden');
+                userWishInput.value = '';
+                showToast("Terima kasih! Doamu telah dikirim untuk Indria 💖");
+                triggerConfetti();
+            } else {
+                showToast("Tuliskan ucapan terlebih dahulu ya!");
+            }
+        });
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
